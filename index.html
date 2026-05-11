@@ -5,22 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>ТОП СЕРВІС — Ремонт смартфонів та ноутбуків | Камʼянське</title>
 
-<!-- SEO мета-теги -->
-<meta name="description" content="Ремонт смартфонів та ноутбуків у Камʼянському. Заміна екрану, акумулятора, роз'єму зарядки. iPhone, Samsung, Xiaomi, Huawei. Швидко, якісно, з гарантією 90 днів. Телефон: 066 005 2325">
+
+<meta name="description" content="Ремонт смартфонів та ноутбуків у Камʼянському. Заміна екрану, акумулятора, роз'єму зарядки. iPhone, Samsung, Xiaomi, Huawei. Швидко, якісно, з гарантією 30 днів. Телефон: 066 005 2325">
 <meta name="keywords" content="ремонт телефонів Камʼянське, ремонт смартфонів Камʼянське, заміна екрану телефону, заміна акумулятора, ремонт ноутбуків, ТОП СЕРВІС">
 <meta name="robots" content="index, follow">
 <meta name="author" content="ТОП СЕРВІС">
 <link rel="canonical" href="https://topservice-kamianske.ua/">
 
-<!-- Open Graph -->
+
 <meta property="og:title" content="ТОП СЕРВІС — Ремонт смартфонів у Камʼянському">
-<meta property="og:description" content="Швидкий ремонт смартфонів та ноутбуків. Оригінальні запчастини, гарантія 90 днів. Дзвоніть: 066 005 2325">
+<meta property="og:description" content="Швидкий ремонт смартфонів та ноутбуків. Оригінальні запчастини, гарантія 30 днів. Дзвоніть: 066 005 2325">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
 <meta property="og:url" content="https://topservice-kamianske.ua/">
 <meta property="og:site_name" content="ТОП СЕРВІС">
 
-<!-- PWA -->
+
 <meta name="theme-color" content="#1a4fc4">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
 <meta name="apple-mobile-web-app-title" content="ТОП СЕРВІС">
 <link rel="manifest" href="manifest.json">
 
-<!-- Schema.org LocalBusiness -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,9 +52,15 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
       "opens": "10:00",
       "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "11:00",
+      "closes": "14:00"
     }
   ],
   "priceRange": "$$",
@@ -116,7 +122,7 @@
 
   .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
 
-  /* === LIVE REPAIR TICKER === */
+ 
   .repair-ticker {
     background: linear-gradient(90deg, #0a0e18, #0d1525, #0a0e18);
     border-bottom: 1px solid rgba(37,96,232,0.3);
@@ -147,7 +153,7 @@
     0%,100%{opacity:1;box-shadow:0 0 6px #4ade80} 50%{opacity:.4;box-shadow:none}
   }
 
-  /* === LANGUAGE SWITCHER === */
+
   .lang-switcher {
     position: fixed; top: 100px; right: 16px;
     z-index: 199; display: flex; gap: 6px;
@@ -163,7 +169,6 @@
   .lang-btn.active { background: var(--blue); color: var(--white); border-color: var(--blue-glow); }
   .lang-btn:hover { color: var(--white); border-color: var(--blue-glow); }
 
-  /* === MOSKALI OVERLAY === */
   .moskali-overlay {
     position: fixed; inset: 0; z-index: 9999;
     display: none; flex-direction: column;
@@ -188,7 +193,69 @@
     font-family: 'Share Tech Mono', monospace; letter-spacing: 0.1em;
   }
 
-  /* === NAV === */
+
+  .cta-popup {
+    position: fixed; bottom: 20px; right: 20px;
+    background: linear-gradient(135deg, rgba(26,79,196,0.95), rgba(42,45,53,0.95));
+    border: 2px solid rgba(37,96,232,0.5);
+    border-radius: 16px; padding: 24px; z-index: 190;
+    max-width: 340px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    backdrop-filter: blur(20px);
+    animation: popupSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: none;
+  }
+  .cta-popup.show { display: block; }
+  @keyframes popupSlideIn {
+    from {
+      transform: translateY(100px) scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+  .cta-popup-close {
+    position: absolute; top: 12px; right: 12px;
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.1); border: none;
+    border-radius: 8px; color: var(--white);
+    font-size: 1.4rem; cursor: pointer;
+    transition: all 0.2s; display: flex;
+    align-items: center; justify-content: center;
+  }
+  .cta-popup-close:hover { background: rgba(255,255,255,0.2); }
+  .cta-popup-title {
+    font-size: 1.3rem; font-weight: 900;
+    margin-bottom: 8px; color: var(--yellow);
+    text-shadow: 0 0 15px rgba(245,216,0,0.3);
+  }
+  .cta-popup-sub {
+    font-size: 0.85rem; color: var(--text-dim);
+    margin-bottom: 18px; line-height: 1.5;
+  }
+  .cta-popup-buttons {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .cta-popup-btn {
+    padding: 14px 18px; border-radius: 10px;
+    font-weight: 800; font-size: 0.95rem;
+    border: none; cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; text-decoration: none; min-height: 48px;
+  }
+  .cta-popup-btn-call {
+    background: var(--yellow); color: var(--gray-dark);
+    box-shadow: 0 0 20px rgba(245,216,0,0.3);
+  }
+  .cta-popup-btn-call:hover { background: var(--yellow-bright); transform: translateY(-2px); }
+  .cta-popup-btn-form {
+    background: rgba(37,96,232,0.3); color: var(--white);
+    border: 1px solid rgba(37,96,232,0.5);
+  }
+  .cta-popup-btn-form:hover { background: rgba(37,96,232,0.5); border-color: var(--blue-glow); }
+
+
   nav {
     position: sticky; top: 34px; z-index: 100;
     background: rgba(26,29,35,0.95);
@@ -246,7 +313,6 @@
   .hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(10px); }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* === MOBILE MENU === */
   .mobile-menu {
     display: none; position: fixed;
     top: 96px; left: 0; right: 0;
@@ -277,7 +343,6 @@
   }
   .mobile-menu .m-phone::before { content: '📞'; font-size: 1rem; }
 
-  /* === STICKY MOBILE CTA === */
   .sticky-cta {
     display: none;
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
@@ -297,10 +362,8 @@
   .sticky-cta-tg { background: linear-gradient(135deg,#229ed9,#1a85b8); color: #fff; }
   .sticky-cta-tg:active { transform: scale(0.97); }
   .sticky-cta-tg svg { width: 18px; height: 18px; flex-shrink: 0; }
-  .sticky-cta-viber { background: linear-gradient(135deg, #7360f2, #5b4bc0); color: #fff; }
-  .sticky-cta-viber:active { transform: scale(0.97); }
 
-  /* === SCROLL TO TOP === */
+
   .scroll-top {
     position: fixed; bottom: 90px; right: 16px; z-index: 149;
     width: 44px; height: 44px; border-radius: 12px;
@@ -314,7 +377,7 @@
   .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
   .scroll-top:hover { background: var(--blue); border-color: var(--blue-glow); color: var(--white); }
 
-  /* === HERO === */
+
   .hero {
     min-height: 90vh; display: flex; align-items: center;
     position: relative; overflow: hidden; padding: 60px 0 80px;
@@ -380,16 +443,6 @@
   .btn-telegram:hover { background: linear-gradient(135deg,#1a85b8,#1570a0); transform: translateY(-2px); box-shadow: 0 0 35px rgba(34,158,217,0.5); }
   .btn-telegram svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-  .btn-viber {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: linear-gradient(135deg, #7360f2, #5b4bc0); color: #fff;
-    font-weight: 800; font-size: 0.95rem; padding: 14px 20px; border-radius: 6px;
-    text-decoration: none; letter-spacing: 0.04em; transition: all 0.2s;
-    box-shadow: 0 0 20px rgba(115,96,242,0.3); border: none; cursor: pointer; min-height: 48px;
-  }
-  .btn-viber:hover { background: linear-gradient(135deg,#5b4bc0,#4a3ba8); transform: translateY(-2px); box-shadow: 0 0 35px rgba(115,96,242,0.5); }
-  .btn-viber svg { width: 18px; height: 18px; flex-shrink: 0; }
-
   .hero-stats {
     display: flex; gap: 20px; margin-top: 36px;
     padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap;
@@ -398,7 +451,7 @@
   .stat .num { font-size: 1.6rem; font-weight: 900; color: var(--yellow); font-family: 'Share Tech Mono', monospace; line-height: 1; }
   .stat .lbl { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
 
-  /* Phone visual */
+
   .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
   .phone-frame {
     width: 200px; height: 390px;
@@ -436,7 +489,7 @@
   .badge-2 { bottom: 55px; right: -65px; color: var(--blue-glow); animation: float 3.5s ease-in-out infinite 1s; }
   .badge-3 { top: 50%; left: -75px; transform: translateY(-50%); color: var(--white); animation: float 4s ease-in-out infinite 0.2s; }
 
-  /* === SECTION DEFAULTS === */
+
   section { padding: 80px 0; position: relative; z-index: 1; }
   .section-label {
     font-family: 'Share Tech Mono', monospace; font-size: 0.72rem;
@@ -447,7 +500,7 @@
   .section-title { font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 900; margin-bottom: 40px; line-height: 1.15; }
   .section-title span { color: var(--yellow); }
 
-  /* === SERVICES === */
+
   .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
   .service-card {
     background: linear-gradient(135deg,rgba(58,63,75,0.6),rgba(26,29,35,0.8));
@@ -466,7 +519,7 @@
   .svc-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
   .svc-price { margin-top: 14px; font-family: 'Share Tech Mono', monospace; font-size: 0.78rem; color: var(--yellow); letter-spacing: 0.05em; }
 
-  /* === PRICE SECTION === */
+
   #price { background: rgba(10,14,24,0.7); border-top: 1px solid rgba(37,96,232,0.12); border-bottom: 1px solid rgba(37,96,232,0.12); }
   .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
   .price-card {
@@ -492,7 +545,34 @@
   .price-note { text-align: center; margin-top: 20px; font-size: 0.8rem; color: var(--text-dim); font-family: 'Share Tech Mono', monospace; letter-spacing: 0.08em; }
   .price-note span { color: var(--blue-glow); }
 
-  /* === BRANDS === */
+
+  .price-free-banner {
+    display: flex; align-items: center; gap: 18px;
+    background: linear-gradient(135deg, rgba(74,222,128,0.1), rgba(26,79,196,0.12));
+    border: 1px solid rgba(74,222,128,0.35); border-radius: 14px;
+    padding: 18px 24px; margin-bottom: 22px; position: relative; overflow: hidden;
+  }
+  .price-free-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(74,222,128,0.04), transparent);
+    pointer-events: none;
+  }
+  .price-free-icon { font-size: 2rem; flex-shrink: 0; }
+  .price-free-title { font-weight: 900; font-size: 1.05rem; color: #4ade80; margin-bottom: 3px; }
+  .price-free-sub { font-size: 0.8rem; color: var(--text-dim); }
+  .price-free-badge {
+    margin-left: auto; flex-shrink: 0;
+    background: #4ade80; color: #0a1a10;
+    font-family: 'Share Tech Mono', monospace; font-weight: 900; font-size: 0.85rem;
+    letter-spacing: 0.12em; padding: 6px 14px; border-radius: 6px;
+    box-shadow: 0 0 16px rgba(74,222,128,0.4);
+  }
+  @media(max-width: 480px) {
+    .price-free-banner { flex-wrap: wrap; gap: 12px; }
+    .price-free-badge { margin-left: 0; }
+  }
+
+
   #brands { background: rgba(26,79,196,0.04); border-top: 1px solid rgba(37,96,232,0.1); border-bottom: 1px solid rgba(37,96,232,0.1); }
   .brands-row { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
   .brand-chip {
@@ -504,51 +584,29 @@
   .brand-chip:hover { border-color: var(--yellow); color: var(--white); background: rgba(245,216,0,0.06); }
   .brand-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-glow); flex-shrink: 0; }
 
-  /* === REVIEWS === */
+
   #reviews {
-    padding: 70px 0; overflow: hidden;
+    padding: 70px 0;
     background: rgba(10,12,18,0.6);
     border-top: 1px solid rgba(37,96,232,0.12);
     border-bottom: 1px solid rgba(37,96,232,0.12);
   }
-  .reviews-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
-  .live-badge {
+  .reviews-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 14px; }
+  .google-badge {
     display: flex; align-items: center; gap: 8px;
-    background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
-    border-radius: 20px; padding: 6px 14px;
-    font-family: 'Share Tech Mono', monospace; font-size: 0.72rem;
-    color: #4ade80; letter-spacing: 0.1em; text-transform: uppercase;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 7px 16px;
+    font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+    color: var(--white); letter-spacing: 0.08em; text-transform: uppercase;
   }
-  .live-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse-green 1.5s ease-in-out infinite; }
-  .review-stream { position: relative; height: 420px; overflow: hidden; }
-  .review-stream::before,
-  .review-stream::after {
-    content: ''; position: absolute; left: 0; right: 0; height: 90px; z-index: 2; pointer-events: none;
+  .elfsight-wrap {
+    border-radius: 14px; overflow: hidden;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(37,96,232,0.15);
+    padding: 4px;
   }
-  .review-stream::before { top: 0; background: linear-gradient(to bottom,rgba(10,12,18,0.98),transparent); }
-  .review-stream::after  { bottom: 0; background: linear-gradient(to top,rgba(10,12,18,0.98),transparent); }
-  .review-feed { display: flex; flex-direction: column; gap: 12px; animation: scroll-up var(--scroll-duration,50s) linear infinite; }
-  @keyframes scroll-up { 0%{transform:translateY(0)} 100%{transform:translateY(-50%)} }
-  .review-card {
-    background: linear-gradient(135deg,rgba(42,45,53,0.85),rgba(26,29,35,0.95));
-    border: 1px solid rgba(37,96,232,0.18); border-radius: 12px;
-    padding: 16px 20px; display: flex; gap: 14px;
-    align-items: flex-start; position: relative; overflow: hidden; flex-shrink: 0;
-  }
-  .review-card::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
-    background: linear-gradient(to bottom,var(--blue-glow),var(--yellow));
-    border-radius: 3px 0 0 3px;
-  }
-  .review-avatar { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; font-weight: 900; }
-  .review-body { flex: 1; min-width: 0; }
-  .review-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
-  .review-author { font-weight: 700; font-size: 0.85rem; color: var(--white); }
-  .review-stars { color: var(--yellow); font-size: 0.72rem; letter-spacing: 1px; }
-  .review-time { font-family: 'Share Tech Mono', monospace; font-size: 0.67rem; color: var(--text-dim); margin-left: auto; }
-  .review-text { font-size: 0.87rem; color: var(--text-dim); line-height: 1.55; }
 
-  /* === INFO STRIP === */
+
   .info-strip {
     background: linear-gradient(90deg,var(--blue) 0%,#0f3080 100%);
     padding: 36px 0; position: relative; overflow: hidden;
@@ -575,7 +633,7 @@
   .btn-maps:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); }
   .btn-maps svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-  /* === WHY US === */
+
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap: 20px; }
   .why-card {
     text-align: center; padding: 32px 20px;
@@ -586,7 +644,7 @@
   .why-num { font-size: 2.6rem; line-height: 1; margin-bottom: 14px; }
   .why-label { font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.5; }
 
-  /* === FAQ === */
+
   #faq { background: rgba(10,14,24,0.6); border-top: 1px solid rgba(37,96,232,0.12); }
   .faq-list { display: flex; flex-direction: column; gap: 10px; }
   .faq-item {
@@ -618,7 +676,7 @@
   .faq-item.open .faq-a { max-height: 300px; padding: 0 22px 18px; }
   .faq-a p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.7; }
 
-  /* === MAP SECTION === */
+
   #map-section { padding: 0; }
   .map-wrap {
     position: relative; height: 340px; overflow: hidden;
@@ -636,7 +694,7 @@
   .map-overlay .mo-addr { font-size: 0.78rem; color: var(--text-dim); }
   .map-overlay .mo-hours { font-size: 0.75rem; color: var(--blue-glow); margin-top: 6px; font-family: 'Share Tech Mono', monospace; }
 
-  /* === ONLINE FORM === */
+
   #order { background: rgba(26,79,196,0.04); border-top: 1px solid rgba(37,96,232,0.12); }
   .order-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
   .order-info { }
@@ -684,7 +742,7 @@
   .btn-submit:active { transform: scale(0.98); }
   .form-note { font-size: 0.72rem; color: var(--text-dim); text-align: center; margin-top: 10px; }
 
-  /* Success state */
+
   .form-success {
     display: none; text-align: center; padding: 24px 16px;
   }
@@ -692,7 +750,7 @@
   .form-success .success-title { font-size: 1.2rem; font-weight: 800; color: #4ade80; margin-bottom: 8px; }
   .form-success .success-sub { font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; }
 
-  /* === CONTACT === */
+
   .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
   .contact-row {
     display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;
@@ -724,11 +782,6 @@
     border: 2px solid rgba(34,158,217,0.4); box-shadow: 0 0 30px rgba(34,158,217,0.2);
   }
   .big-cta-tg:hover { border-color: #229ed9; box-shadow: 0 0 50px rgba(34,158,217,0.4); }
-  .big-cta-viber {
-    background: linear-gradient(135deg,#1a1040,#2d1a6e);
-    border: 2px solid rgba(115,96,242,0.4); box-shadow: 0 0 30px rgba(115,96,242,0.2);
-  }
-  .big-cta-viber:hover { border-color: var(--viber); box-shadow: 0 0 50px rgba(115,96,242,0.4); }
   .big-cta-maps {
     background: linear-gradient(135deg,#0a2018,#0f3322);
     border: 2px solid rgba(52,211,153,0.4); box-shadow: 0 0 30px rgba(52,211,153,0.15);
@@ -741,15 +794,12 @@
   .big-cta-icon-phone { background: rgba(245,216,0,0.15); }
   .big-cta-icon-tg { background: rgba(34,158,217,0.2); }
   .big-cta-icon-tg svg { width: 28px; height: 28px; fill: #fff; }
-  .big-cta-icon-viber { background: rgba(115,96,242,0.2); }
-  .big-cta-icon-viber svg { width: 28px; height: 28px; fill: #fff; }
   .big-cta-icon-maps { background: rgba(52,211,153,0.2); }
   .big-cta-icon-maps svg { width: 28px; height: 28px; fill: #34d399; }
   .big-cta-text .sub { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; color: #fff; margin-bottom: 4px; }
   .big-cta-text .main { font-size: 1.2rem; font-weight: 900; color: #fff; letter-spacing: 0.02em; font-family: 'Share Tech Mono', monospace; }
   .big-cta-text .main.yellow { color: var(--yellow); text-shadow: 0 0 15px rgba(245,216,0,0.4); }
   .big-cta-text .main.tg-color { color: #7dd3f0; }
-  .big-cta-text .main.viber-color { color: #b8acff; }
   .big-cta-text .main.maps-color { color: #6ee7b7; }
 
   .slogan-block {
@@ -761,18 +811,18 @@
   .slogan-sep { color: var(--blue-glow); }
   .slogan-sub { font-size: 0.78rem; color: var(--text-dim); margin-top: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
 
-  /* === FOOTER === */
+ 
   footer { background: rgba(10,12,16,0.95); border-top: 2px solid rgba(37,96,232,0.3); padding: 24px 0; text-align: center; }
   .footer-logo { font-size: 1.25rem; font-weight: 900; margin-bottom: 8px; }
   .footer-logo .top { color: var(--yellow); }
   .footer-logo .srv { color: var(--blue-glow); }
   .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
 
-  /* === SCROLL REVEAL === */
+
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* === RESPONSIVE === */
+
   @media(max-width: 900px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
@@ -780,6 +830,7 @@
     .sticky-cta { display: flex; }
     .scroll-top { bottom: 80px; }
     body { padding-bottom: 70px; }
+    .cta-popup { bottom: 90px; }
   }
   @media(max-width: 768px) {
     .hero { min-height: auto; padding: 40px 0 60px; }
@@ -801,11 +852,12 @@
   @media(max-width: 480px) {
     .hero h1 { font-size: 1.9rem; }
     .hero-cta { flex-direction: column; }
-    .btn-primary,.btn-telegram,.btn-viber,.btn-secondary { width: 100%; justify-content: center; }
+    .btn-primary,.btn-telegram,.btn-secondary { width: 100%; justify-content: center; }
     .hero-stats { justify-content: space-between; }
     .brands-row { gap: 8px; }
     .brand-chip { font-size: 0.85rem; padding: 9px 14px; }
     .nav-logo { font-size: 1.15rem; }
+    .cta-popup { max-width: calc(100vw - 40px); }
   }
 
   @media(prefers-reduced-motion: reduce) {
@@ -859,7 +911,7 @@
   </svg>
 </div>
 
-<!-- MOSKALI OVERLAY -->
+  
 <div class="moskali-overlay" id="moskaliOverlay" onclick="closeMoskali()">
   <div class="flag-top"></div>
   <div class="flag-bottom"></div>
@@ -867,34 +919,40 @@
   <div class="overlay-hint">[ натисніть будь-де щоб закрити ]</div>
 </div>
 
-<!-- LIVE REPAIR TICKER -->
+<div class="cta-popup" id="ctaPopup">
+  <button class="cta-popup-close" onclick="closeCtaPopup()">✕</button>
+  <div class="cta-popup-title">💡 Потрібна допомога?</div>
+  <div class="cta-popup-sub">Залиште заявку або зателефонуйте — відповімо протягом 30 хвилин!</div>
+  <div class="cta-popup-buttons">
+    <a href="tel:0660052325" class="cta-popup-btn cta-popup-btn-call">📞 Зателефонувати</a>
+    <a href="#order" class="cta-popup-btn cta-popup-btn-form" onclick="closeCtaPopup()">📋 Залишити заявку</a>
+  </div>
+</div>
+
+
 <div class="repair-ticker">
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
 
-<!-- LANGUAGE SWITCHER -->
+
 <div class="lang-switcher">
   <button class="lang-btn active" onclick="setLang('uk')">🇺🇦 УКР</button>
   <button class="lang-btn" onclick="setLang('ru')">РУС</button>
 </div>
 
-<!-- SCROLL TO TOP -->
+
 <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Нагору">↑</button>
 
-<!-- STICKY MOBILE CTA -->
+
 <div class="sticky-cta" id="stickyCta">
   <a href="tel:0660052325" class="sticky-cta-btn sticky-cta-phone">📞 Зателефонувати</a>
   <button class="sticky-cta-btn sticky-cta-tg" onclick="openTelegram()">
     <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.26l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.836.326z"/></svg>
     TG
   </button>
-  <a href="viber://chat?number=%2B380660052325" class="sticky-cta-btn sticky-cta-viber">
-    <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M11.985.015C8.89-.09 2.812 1.025 .87 6.651c-.826 2.369-.915 5.452-.51 9.143 0 0 .51 5.547 5.879 6.994l.007 3.197 3.59-3.59s5.41.469 8.7-1.63c2.852-1.855 3.987-5.688 4.107-9.342.12-3.655-.553-8.024-2.955-10.015C18.197.966 15.076.12 11.985.015zm-.1 1.868c2.793.019 5.398.716 6.855 2.012 1.914 1.665 2.603 5.553 2.502 9.013-.094 3.126-.985 6.432-3.302 7.956-2.645 1.718-7.397 1.39-7.397 1.39L8.1 24.04l-.007-2.607S3.46 20.4 3.004 16.03c-.376-3.58-.278-6.4.406-8.472 1.629-4.677 6.614-5.69 8.475-5.675zm.068 2.41c-.3.003-.608.029-.922.08C8.8 4.684 7.135 5.89 6.576 8.036c-.436 1.654-.2 3.794.475 4.95.67 1.155 2.003 2.41 3.338 2.792.453.13.98.19 1.55.19.834 0 1.746-.182 2.525-.593 1.41-.742 2.42-2.09 2.676-3.618.22-1.306.1-2.797-.51-4.018-.55-1.095-1.638-2.256-3.067-3.077-.556-.32-1.152-.487-1.51-.489zm-.16 1.527c.255.012.55.117.889.31.913.527 1.82 1.474 2.266 2.34.49.975.584 2.225.393 3.295-.19 1.124-.922 2.117-1.93 2.653-.67.351-1.48.5-2.224.43-.422-.04-.817-.148-1.1-.231-.88-.252-1.855-1.116-2.342-1.962-.5-.862-.698-2.633-.37-3.837.406-1.548 1.638-2.413 3.157-2.643a4.3 4.3 0 0 1 1.261-.355zm-.097 1.44c-.327.02-.658.1-.98.238-.808.348-1.484 1.108-1.694 1.914-.24.914-.032 2.423.27 2.967.352.624 1.107 1.287 1.73 1.47.204.059.5.15.84.15.589 0 1.226-.18 1.72-.451.72-.38 1.248-1.09 1.384-1.874.13-.783.033-1.766-.266-2.39-.332-.662-1.063-1.419-1.907-1.85a2.46 2.46 0 0 0-1.097-.174zm1.638 1.645c.157.01.3.07.43.164.133.096.17.293.08.437-.094.145-.285.183-.43.089a.52.52 0 0 0-.144-.065c-.058-.015-.116-.017-.17-.005-.11.023-.212.094-.266.22-.054.122-.058.29.032.411.182.245.554.23.745.028.076-.081.126-.196.102-.312-.025-.117-.124-.199-.24-.199a.31.31 0 0 0-.081.013c-.082.025-.152.083-.17.17a.153.153 0 0 0 .136.187l.031.001c.03 0 .06-.008.087-.024.034-.021.048-.063.032-.1a.094.094 0 0 0-.12-.046.108.108 0 0 0-.029.016"/></svg>
-    Viber
-  </a>
 </div>
 
-<!-- NAV -->
+
 <nav>
   <div class="inner">
     <a href="#" class="nav-logo">
@@ -929,7 +987,7 @@
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
+
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMenu()">Послуги</a>
   <a href="#price" onclick="closeMenu()">Прайс</a>
@@ -940,7 +998,7 @@
   <a href="tel:0660052325" class="m-phone" onclick="closeMenu()">066 005 2325</a>
 </div>
 
-<!-- HERO -->
+
 <section class="hero">
   <div class="container">
     <div class="hero-grid">
@@ -961,10 +1019,6 @@
             <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.26l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.836.326z"/></svg>
             Telegram
           </button>
-          <a href="viber://chat?number=%2B380660052325" class="btn-viber">
-            <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M11.985.015C8.89-.09 2.812 1.025.87 6.651c-.826 2.369-.915 5.452-.51 9.143 0 0 .51 5.547 5.879 6.994l.007 3.197 3.59-3.59s5.41.469 8.7-1.63c2.852-1.855 3.987-5.688 4.107-9.342.12-3.655-.553-8.024-2.955-10.015C18.197.966 15.076.12 11.985.015z"/></svg>
-            Viber
-          </a>
           <a href="#order" class="btn-secondary">Замовити →</a>
         </div>
         <div class="hero-stats">
@@ -980,7 +1034,7 @@
           <div class="phone-notch"></div>
           <div class="phone-screen">
             <div class="phone-icon">🔧</div>
-            <div class="phone-text">ДІАГНОСТИКА<br>ЗАВЕРШЕНА<br>─────────<br>РЕМОНТ: OK</div>
+            <div class="phone-text">ДІАГНОСТИКА<br>ЗАКІНЧЕНА<br>─────────<br>РЕМОНТ: OK</div>
           </div>
           <div class="phone-btn"></div>
         </div>
@@ -992,7 +1046,7 @@
   </div>
 </section>
 
-<!-- INFO STRIP -->
+
 <div class="info-strip">
   <div class="container">
     <div class="info-grid">
@@ -1018,14 +1072,14 @@
         <div class="info-icon">🕐</div>
         <div class="info-content">
           <div class="info-label">Графік роботи</div>
-          <div class="info-value">Пн–Сб: 10:00–18:00</div>
+          <div class="info-value">Пн–Пт: 10:00–18:00<br>Сб: 11:00–14:00</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SERVICES -->
+
 <section id="services">
   <div class="container">
     <div class="section-label">послуги</div>
@@ -1041,7 +1095,7 @@
         <span class="svc-icon">🔋</span>
         <div class="svc-name">Заміна акумулятора</div>
         <div class="svc-desc">Оригінальні батареї. Відновлюємо до 100% ємності. Гарантія 3 місяці.</div>
-        <div class="svc-price">▶ Гарантія 90 днів</div>
+        <div class="svc-price">▶ Гарантія 30 днів</div>
       </div>
       <div class="service-card reveal">
         <span class="svc-icon">🔌</span>
@@ -1071,52 +1125,70 @@
   </div>
 </section>
 
-<!-- PRICE -->
+
 <section id="price">
   <div class="container">
     <div class="section-label">вартість ремонту</div>
     <h2 class="section-title reveal">Орієнтовний <span>прайс</span></h2>
+    
+    <div class="price-free-banner reveal">
+      <span class="price-free-icon">🎯</span>
+      <div>
+        <div class="price-free-title">Консультація — безкоштовно</div>
+        <div class="price-free-sub">Приходьте або телефонуйте — оцінимо без жодних зобовʼязань</div>
+      </div>
+      <span class="price-free-badge">FREE</span>
+    </div>
+
     <div class="price-grid">
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">📱</div><div><div class="price-name">Заміна дисплея</div><div class="price-brand">iPhone / Samsung / Xiaomi</div></div></div>
-        <div class="price-amount">від 800+ грн</div>
+        <div class="price-service"><div class="price-icon">🛍️</div><div><div class="price-name">Аксесуари</div><div class="price-brand">Чохли, кабелі, зарядки та ін.</div></div></div>
+        <div class="price-amount">150+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔋</div><div><div class="price-name">Заміна акумулятора</div><div class="price-brand">Будь-який смартфон</div></div></div>
-        <div class="price-amount">від 400+ грн</div>
+        <div class="price-service"><div class="price-icon">🛡️</div><div><div class="price-name">Захисне скло</div><div class="price-brand">Для будь-якої моделі</div></div></div>
+        <div class="price-amount">250+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔌</div><div><div class="price-name">Ремонт роз'єму зарядки</div><div class="price-brand">USB-C / Lightning / micro</div></div></div>
-        <div class="price-amount">від 300+ грн</div>
+        <div class="price-service"><div class="price-icon">🧹</div><div><div class="price-name">Чистка комплексна</div><div class="price-brand">Повне очищення пристрою</div></div></div>
+        <div class="price-amount">200 грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">📷</div><div><div class="price-name">Заміна камери</div><div class="price-brand">Фронтальна / основна</div></div></div>
-        <div class="price-amount">від 500+ грн</div>
+        <div class="price-service"><div class="price-icon">🔌</div><div><div class="price-name">Роз'єм зарядки</div><div class="price-brand">USB-C / Lightning / micro-USB</div></div></div>
+        <div class="price-amount">500+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔊</div><div><div class="price-name">Ремонт динаміка / мікрофона</div><div class="price-brand">Будь-яка модель</div></div></div>
-        <div class="price-amount">від 250+ грн</div>
+        <div class="price-service"><div class="price-icon">🎙️</div><div><div class="price-name">Мікрофон / динамік</div><div class="price-brand">Будь-яка модель смартфона</div></div></div>
+        <div class="price-amount">450+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">💧</div><div><div class="price-name">Після влучення рідини</div><div class="price-brand">Чищення + діагностика</div></div></div>
-        <div class="price-amount">від 350+ грн</div>
+        <div class="price-service"><div class="price-icon">📱</div><div><div class="price-name">Заміна скла дисплею</div><div class="price-brand">Зі збереженням матриці</div></div></div>
+        <div class="price-amount">800+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">💻</div><div><div class="price-name">Ремонт ноутбука</div><div class="price-brand">Екран / клавіатура / SSD</div></div></div>
-        <div class="price-amount">від 600+ грн</div>
+        <div class="price-service"><div class="price-icon">🖥️</div><div><div class="price-name">Зміна дисплею</div><div class="price-brand">iPhone / Samsung / Xiaomi</div></div></div>
+        <div class="price-amount">700+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔍</div><div><div class="price-name">Діагностика</div><div class="price-brand">При будь-якому ремонті</div></div></div>
-        <div class="price-amount">БЕЗКОШТОВНО</div>
+        <div class="price-service"><div class="price-icon">📟</div><div><div class="price-name">Ремонт планшетів</div><div class="price-brand">iPad / Samsung Tab та інші</div></div></div>
+        <div class="price-amount">700+ грн</div>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-service"><div class="price-icon">💻</div><div><div class="price-name">Чистка ноутбука / PlayStation</div><div class="price-brand">Від пилу, термопаста</div></div></div>
+        <div class="price-amount">800+ грн</div>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-service"><div class="price-icon">🎧</div><div><div class="price-name">Чистка навушників</div><div class="price-brand">AirPods / TWS / дротові</div></div></div>
+        <div class="price-amount">300 грн</div>
       </div>
     </div>
     <div class="price-note">
-      <span>※</span> Точна ціна визначається після діагностики. Ціни вказані орієнтовно. Телефонуйте — уточнимо вартість безкоштовно.
+      <span>※</span> Точна ціна визначається після діагностики. Ціни орієнтовні. Телефонуйте — уточнимо вартість безкоштовно.
     </div>
   </div>
 </section>
 
-<!-- BRANDS -->
+
 <section id="brands" style="padding: 48px 0;">
   <div class="container">
     <div class="section-label" style="justify-content:center; margin-bottom: 26px;">Бренди які ми ремонтуємо</div>
@@ -1132,7 +1204,7 @@
   </div>
 </section>
 
-<!-- FAQ -->
+
 <section id="faq">
   <div class="container">
     <div class="section-label">часті питання</div>
@@ -1165,7 +1237,7 @@
           <i class="faq-icon">+</i>
         </div>
         <div class="faq-a">
-          <p>Ми надаємо гарантію 90 днів на всі виконані роботи та встановлені запчастини. Якщо протягом цього терміну виникне проблема через нашу вину — відремонтуємо безкоштовно. Гарантія не поширюється на механічні пошкодження після ремонту.</p>
+          <p>Ми надаємо гарантію 30 днів на всі виконані роботи та встановлені запчастини. Якщо протягом цього терміну виникне проблема через нашу вину — відремонтуємо безкоштовно. Гарантія не поширюється на механічні пошкодження після ремонту.</p>
         </div>
       </div>
 
@@ -1213,7 +1285,7 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
+
 <section id="reviews">
   <div class="container">
     <div class="reviews-header reveal">
@@ -1221,15 +1293,19 @@
         <div class="section-label" style="margin-bottom: 6px;">відгуки клієнтів</div>
         <h2 class="section-title" style="margin-bottom: 0;">Що кажуть <span>клієнти</span></h2>
       </div>
-      <div class="live-badge"><div class="live-dot"></div>live</div>
+      <div class="google-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Google Reviews
+      </div>
     </div>
-    <div class="review-stream">
-      <div class="review-feed" id="reviewFeed"></div>
+    <div class="elfsight-wrap reveal">
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-5ffb8a6e-e10a-4f7e-b4f6-d0af54a816f9" data-elfsight-app-lazy></div>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
+
 <section id="why">
   <div class="container">
     <div class="section-label">чому обирають нас</div>
@@ -1244,13 +1320,13 @@
   </div>
 </section>
 
-<!-- ONLINE ORDER FORM -->
+
 <section id="order">
   <div class="container">
     <div class="section-label">онлайн замовлення</div>
     <h2 class="section-title reveal">Залишити <span>заявку</span></h2>
     <div class="order-wrap">
-      <!-- Left: перваги форми -->
+      
       <div class="order-info reveal">
         <p style="color:var(--text-dim);line-height:1.7;margin-bottom:10px;">
           Не хочете телефонувати? Заповніть форму — ми зателефонуємо вам самі та узгодимо зручний час.
@@ -1275,7 +1351,7 @@
         </div>
       </div>
 
-      <!-- Right: форма -->
+      
       <div class="order-form-box reveal">
         <div class="form-title">Заявка на <span>ремонт</span></div>
         <div id="orderFormInner">
@@ -1327,7 +1403,7 @@
           <div class="form-note">Натискаючи кнопку, ви погоджуєтесь на зворотній дзвінок від нашого майстра</div>
         </div>
 
-        <!-- Success state -->
+        
         <div class="form-success" id="formSuccess">
           <div class="success-icon">✅</div>
           <div class="success-title">Заявку отримано!</div>
@@ -1343,7 +1419,7 @@
   </div>
 </section>
 
-<!-- MAP -->
+
 <div id="map-section">
   <div class="map-wrap">
     <iframe
@@ -1355,12 +1431,12 @@
     <div class="map-overlay">
       <div class="mo-title">📍 ТОП СЕРВІС</div>
       <div class="mo-addr">вул. Медична 1/11, Камʼянське</div>
-      <div class="mo-hours">🕐 Пн–Сб: 09:00–18:00</div>
+      <div class="mo-hours">🕐 Пн–Пт: 10:00–18:00 | Сб: 11:00–14:00</div>
     </div>
   </div>
 </div>
 
-<!-- CONTACT -->
+
 <section id="contact">
   <div class="container">
     <div class="section-label">контакти</div>
@@ -1385,7 +1461,7 @@
           <div class="contact-row-icon">🕐</div>
           <div class="contact-row-text">
             <div class="lbl">Графік роботи</div>
-            <div class="val">Понеділок – Субота: 10:00 – 18:00<br><span style="color:var(--text-dim);font-size:0.82rem">Неділя: вихідний</span></div>
+            <div class="val">Понеділок – П'ятниця: 10:00 – 18:00<br>Субота: 11:00 – 14:00<br><span style="color:var(--text-dim);font-size:0.82rem">Неділя: вихідний</span></div>
           </div>
         </div>
         <div class="slogan-block" style="margin-top:16px">
@@ -1395,7 +1471,7 @@
       </div>
 
       <div class="contact-cta-block reveal">
-        <!-- Phone -->
+        
         <a href="tel:0660052325" class="big-cta-btn big-cta-phone">
           <div class="big-cta-icon big-cta-icon-phone">📞</div>
           <div class="big-cta-text">
@@ -1403,7 +1479,7 @@
             <div class="main yellow">066 005 2325</div>
           </div>
         </a>
-        <!-- Telegram -->
+        
         <button class="big-cta-btn big-cta-tg" onclick="openTelegram()">
           <div class="big-cta-icon big-cta-icon-tg">
             <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.26l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.836.326z"/></svg>
@@ -1413,17 +1489,7 @@
             <div class="main tg-color">Написати в Telegram →</div>
           </div>
         </button>
-        <!-- Viber -->
-        <a href="viber://chat?number=%2B380660052325" class="big-cta-btn big-cta-viber">
-          <div class="big-cta-icon big-cta-icon-viber">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M11.985.015C8.89-.09 2.812 1.025.87 6.651c-.826 2.369-.915 5.452-.51 9.143 0 0 .51 5.547 5.879 6.994l.007 3.197 3.59-3.59s5.41.469 8.7-1.63c2.852-1.855 3.987-5.688 4.107-9.342.12-3.655-.553-8.024-2.955-10.015C18.197.966 15.076.12 11.985.015zm-.1 1.868c2.793.019 5.398.716 6.855 2.012 1.914 1.665 2.603 5.553 2.502 9.013-.094 3.126-.985 6.432-3.302 7.956-2.645 1.718-7.397 1.39-7.397 1.39L8.1 24.04l-.007-2.607S3.46 20.4 3.004 16.03c-.376-3.58-.278-6.4.406-8.472 1.629-4.677 6.614-5.69 8.475-5.675zm.068 2.41c-.3.003-.608.029-.922.08C8.8 4.684 7.135 5.89 6.576 8.036c-.436 1.654-.2 3.794.475 4.95.67 1.155 2.003 2.41 3.338 2.792.453.13.98.19 1.55.19.834 0 1.746-.182 2.525-.593 1.41-.742 2.42-2.09 2.676-3.618.22-1.306.1-2.797-.51-4.018-.55-1.095-1.638-2.256-3.067-3.077-.556-.32-1.152-.487-1.51-.489z"/></svg>
-          </div>
-          <div class="big-cta-text">
-            <div class="sub">Написати повідомлення</div>
-            <div class="main viber-color">Написати у Viber →</div>
-          </div>
-        </a>
-        <!-- Maps -->
+        
         <a href="https://www.google.com/maps/dir/?api=1&destination=вул.+Медична+1%2F11%2C+Кам%27янське" target="_blank" class="big-cta-btn big-cta-maps">
           <div class="big-cta-icon big-cta-icon-maps">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -1438,16 +1504,16 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+
 <footer>
   <div class="container">
     <div class="footer-logo"><span class="top">ТОП</span> <span class="srv">СЕРВІС</span></div>
-    <div class="footer-copy">© 2019 ТОП СЕРВІС · Ремонт смартфонів та ноутбуків · вул. Медична 1/11, Камʼянське</div>
+    <div class="footer-copy">© 2025 ТОП СЕРВІС · Ремонт смартфонів та ноутбуків · вул. Медична 1/11, Камʼянське</div>
   </div>
 </footer>
 
 <script>
-// === SCROLL REVEAL ===
+
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
@@ -1459,7 +1525,7 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 reveals.forEach(r => observer.observe(r));
 
-// === HERO STAGGER ===
+
 document.querySelectorAll('.hero-left > *').forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
@@ -1467,7 +1533,21 @@ document.querySelectorAll('.hero-left > *').forEach((el, i) => {
   setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, 200 + i * 120);
 });
 
-// === RESPONSIVE NAV ===
+
+setTimeout(() => {
+  const popup = document.getElementById('ctaPopup');
+  if (popup) popup.classList.add('show');
+}, 60000); 
+
+function closeCtaPopup() {
+  const popup = document.getElementById('ctaPopup');
+  if (popup) {
+    popup.style.animation = 'popupSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) reverse';
+    setTimeout(() => popup.classList.remove('show'), 400);
+  }
+}
+
+
 (function() {
   const navPhone = document.getElementById('navPhone');
   if (window.innerWidth > 900) navPhone.style.display = 'flex';
@@ -1476,7 +1556,7 @@ document.querySelectorAll('.hero-left > *').forEach((el, i) => {
   });
 })();
 
-// === MOBILE MENU ===
+
 function toggleMenu() {
   const m = document.getElementById('mobileMenu');
   const h = document.getElementById('hamburger');
@@ -1500,7 +1580,7 @@ function closeMenu() {
   h.classList.remove('open');
 }
 
-// === SCROLL TO TOP ===
+
 const scrollBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll', () => {
   scrollBtn.classList.toggle('visible', window.scrollY > 300);
@@ -1509,7 +1589,7 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// === LANGUAGE SWITCHER ===
+
 function setLang(lang) {
   if (lang === 'ru') {
     document.getElementById('moskaliOverlay').classList.add('show');
@@ -1524,11 +1604,11 @@ function closeMoskali() {
   document.querySelectorAll('.lang-btn')[0].classList.add('active');
 }
 
-// === TELEGRAM / MAPS ===
+
 function openTelegram() { window.open('https://t.me/TopService_Kamianske_bot', '_blank'); }
 function openMaps() { window.open('https://www.google.com/maps/dir/?api=1&destination=%D0%B2%D1%83%D0%BB.+%D0%9C%D0%B5%D0%B4%D0%B8%D1%87%D0%BD%D0%B0+1%2F11%2C+%D0%9A%D0%B0%D0%BC%27%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B5', '_blank'); }
 
-// === FAQ ===
+
 function toggleFaq(el) {
   const item = el.parentElement;
   const isOpen = item.classList.contains('open');
@@ -1536,7 +1616,7 @@ function toggleFaq(el) {
   if (!isOpen) item.classList.add('open');
 }
 
-// === ONLINE FORM ===
+
 function submitForm() {
   const name = document.getElementById('fname').value.trim();
   const phone = document.getElementById('fphone').value.trim();
@@ -1548,16 +1628,14 @@ function submitForm() {
   if (!device) { alert('Будь ласка, оберіть тип пристрою'); document.getElementById('fdevice').focus(); return; }
   if (!problem) { alert('Будь ласка, оберіть тип несправності'); document.getElementById('fproblem').focus(); return; }
 
-  // Тут можна підключити відправку на бекенд або через Telegram Bot API
-  // fetch('/api/order', { method:'POST', body: JSON.stringify({ name, phone, device, problem }) })
-
+  
   document.getElementById('successName').textContent = name;
   document.getElementById('successPhone').textContent = phone;
   document.getElementById('orderFormInner').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
 
-// === LIVE REPAIR TICKER ===
+
 const tickerItems = [
   { brand: 'iPhone 14 Pro', op: 'заміна дисплея', status: '🔧 В роботі' },
   { brand: 'Samsung S23', op: 'заміна акумулятора', status: '✅ Готово' },
@@ -1589,62 +1667,7 @@ function buildTicker() {
 }
 buildTicker();
 
-// === REVIEWS ===
-const reviews = [
-  { text: 'Звернувся через розбитий екран — зробили швидко і акуратно. Телефон як новий 👍', name: 'Олег К.', stars: 5, emoji: '😊' },
-  { text: 'Не працював динамік, вже думав міняти телефон. Тут все вирішили за кілька годин.', name: 'Марина В.', stars: 5, emoji: '😮' },
-  { text: 'Дуже адекватний сервіс, пояснили причину поломки і не навʼязували зайвого.', name: 'Ігор Т.', stars: 5, emoji: '🤝' },
-  { text: 'Міняли батарею — тепер тримає цілий день без проблем. Дякую!', name: 'Наталя Р.', stars: 5, emoji: '🔋' },
-  { text: 'Все чітко і по справі. Приніс — сказали ціну — зробили без сюрпризів.', name: 'Андрій М.', stars: 5, emoji: '✅' },
-  { text: 'Після води телефон майже не подавав ознак життя, але тут його врятували 🙏', name: 'Тетяна С.', stars: 5, emoji: '💧' },
-  { text: 'Приємне обслуговування, видно що люди знають свою справу.', name: 'Василь Д.', stars: 5, emoji: '👨‍🔧' },
-  { text: 'Заміна скла пройшла ідеально, навіть не скажеш що був ремонт.', name: 'Оксана Ф.', stars: 5, emoji: '📱' },
-  { text: 'Зробили швидше ніж обіцяли, за це окремий плюс.', name: 'Дмитро Л.', stars: 5, emoji: '⚡' },
-  { text: 'Ціни нормальні, якість топ. Рекомендую.', name: 'Катерина П.', stars: 5, emoji: '⭐' },
-  { text: 'Проблема з зарядкою — вирішили за один день. Все працює ідеально.', name: 'Сергій Н.', stars: 5, emoji: '🔌' },
-  { text: 'Дякую майстру за чесність, сказав що міняти не треба — просто почистив.', name: 'Людмила Ж.', stars: 5, emoji: '🙏' },
-  { text: 'Звертаюсь не перший раз, як завжди все на рівні.', name: 'Роман Б.', stars: 5, emoji: '🔁' },
-  { text: 'Дуже швидко і без зайвих питань. Приніс телефон — забрав вже готовий.', name: 'Аліна В.', stars: 5, emoji: '🏃' },
-  { text: 'Якісний ремонт і гарантія — це важливо. Тут все є.', name: 'Микола З.', stars: 5, emoji: '🛡' },
-  { text: 'Телефон почав сильно грітись, виправили проблему без заміни дорогих деталей.', name: 'Ірина К.', stars: 5, emoji: '🌡' },
-  { text: 'Все пояснили простими словами, навіть для тих хто не розбирається.', name: 'Павло Г.', stars: 5, emoji: '💬' },
-  { text: 'Хороший сервіс, приємні люди і адекватні ціни.', name: 'Юлія Х.', stars: 5, emoji: '😄' },
-  { text: 'Реально врятували мій телефон, вже думав що все, кінець.', name: 'Євген А.', stars: 5, emoji: '🎉' },
-  { text: 'Швидко, якісно і без обману. Саме те, що шукав.', name: 'Вікторія М.', stars: 5, emoji: '💯' },
-];
-const avatarColors = [
-  ['#1a4fc4','#3d7fff'],['#7c3aed','#a855f7'],['#0f766e','#14b8a6'],
-  ['#b45309','#f59e0b'],['#be123c','#f43f5e'],['#1d4ed8','#60a5fa'],
-];
-const timeLabels = ['щойно','1 хв тому','2 хв тому','3 хв тому','5 хв тому','7 хв тому','10 хв тому','15 хв тому','20 хв тому','25 хв тому'];
-function makeCard(review, timeIdx) {
-  const c = avatarColors[Math.floor(Math.random() * avatarColors.length)];
-  const stars = '★'.repeat(review.stars) + '☆'.repeat(5 - review.stars);
-  const time = timeLabels[Math.min(timeIdx, timeLabels.length - 1)];
-  const card = document.createElement('div');
-  card.className = 'review-card';
-  card.innerHTML = `
-    <div class="review-avatar" style="background:linear-gradient(135deg,${c[0]},${c[1]});color:#fff;">${review.emoji}</div>
-    <div class="review-body">
-      <div class="review-meta">
-        <span class="review-author">${review.name}</span>
-        <span class="review-stars">${stars}</span>
-        <span class="review-time">${time}</span>
-      </div>
-      <div class="review-text">${review.text}</div>
-    </div>`;
-  return card;
-}
-function buildReviews() {
-  const feed = document.getElementById('reviewFeed');
-  const shuffled = [...reviews].sort(() => Math.random() - 0.5);
-  const all = [...shuffled, ...shuffled];
-  all.forEach((r, i) => feed.appendChild(makeCard(r, i % reviews.length)));
-  feed.style.animationDuration = (all.length * 3.2) + 's';
-}
-buildReviews();
 
-// === PWA Service Worker ===
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(() => {});
