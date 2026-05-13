@@ -5,13 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>ТОП СЕРВІС — Ремонт смартфонів та ноутбуків | Камʼянське</title>
 
-
 <meta name="description" content="Ремонт смартфонів та ноутбуків у Камʼянському. Заміна екрану, акумулятора, роз'єму зарядки. iPhone, Samsung, Xiaomi, Huawei. Швидко, якісно, з гарантією 30 днів. Телефон: 066 005 2325">
 <meta name="keywords" content="ремонт телефонів Камʼянське, ремонт смартфонів Камʼянське, заміна екрану телефону, заміна акумулятора, ремонт ноутбуків, ТОП СЕРВІС">
 <meta name="robots" content="index, follow">
 <meta name="author" content="ТОП СЕРВІС">
 <link rel="canonical" href="https://topservice-kamianske.ua/">
-
 
 <meta property="og:title" content="ТОП СЕРВІС — Ремонт смартфонів у Камʼянському">
 <meta property="og:description" content="Швидкий ремонт смартфонів та ноутбуків. Оригінальні запчастини, гарантія 30 днів. Дзвоніть: 066 005 2325">
@@ -20,54 +18,12 @@
 <meta property="og:url" content="https://topservice-kamianske.ua/">
 <meta property="og:site_name" content="ТОП СЕРВІС">
 
-
 <meta name="theme-color" content="#1a4fc4">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ТОП СЕРВІС">
 <link rel="manifest" href="manifest.json">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "ТОП СЕРВІС",
-  "description": "Ремонт смартфонів та ноутбуків у Камʼянському",
-  "telephone": "+380660052325",
-  "url": "https://topservice-kamianske.ua",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "вул. Медична 1/11",
-    "addressLocality": "Камʼянське",
-    "addressRegion": "Дніпропетровська область",
-    "addressCountry": "UA"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.5,
-    "longitude": 34.6
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "10:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "11:00",
-      "closes": "14:00"
-    }
-  ],
-  "priceRange": "$$",
-  "image": "https://topservice-kamianske.ua/og-image.jpg",
-  "sameAs": ["https://t.me/TopService_Kamianske_bot"]
-}
-</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -84,6 +40,7 @@
     --white: #f0f4ff;
     --text-dim: #8a9ab8;
     --viber: #7360f2;
+    --instagram: #e4405f;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -122,7 +79,6 @@
 
   .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
 
- 
   .repair-ticker {
     background: linear-gradient(90deg, #0a0e18, #0d1525, #0a0e18);
     border-bottom: 1px solid rgba(37,96,232,0.3);
@@ -152,7 +108,6 @@
   @keyframes pulse-green {
     0%,100%{opacity:1;box-shadow:0 0 6px #4ade80} 50%{opacity:.4;box-shadow:none}
   }
-
 
   .lang-switcher {
     position: fixed; top: 100px; right: 16px;
@@ -192,7 +147,6 @@
     font-size: 0.85rem; color: rgba(255,255,255,0.6);
     font-family: 'Share Tech Mono', monospace; letter-spacing: 0.1em;
   }
-
 
   .cta-popup {
     position: fixed; bottom: 20px; right: 20px;
@@ -255,6 +209,17 @@
   }
   .cta-popup-btn-form:hover { background: rgba(37,96,232,0.5); border-color: var(--blue-glow); }
 
+  .form-loading {
+    display: none; text-align: center; padding: 20px;
+  }
+  .form-loading.show { display: block; }
+  .spinner {
+    width: 40px; height: 40px; border: 3px solid rgba(37,96,232,0.2);
+    border-top-color: var(--yellow); border-radius: 50%;
+    animation: spin 0.8s linear infinite; margin: 0 auto 12px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .form-loading-text { font-size: 0.9rem; color: var(--text-dim); }
 
   nav {
     position: sticky; top: 34px; z-index: 100;
@@ -273,13 +238,7 @@
     text-decoration: none; color: inherit; flex-shrink: 0;
   }
   .nav-logo .gear-icon { font-size: 1.6rem; animation: spin 8s linear infinite; display: inline-block; }
-  @keyframes spin { to { transform: rotate(360deg); } }
   .logo-top { display: inline-flex; align-items: center; font-weight: 900; color: var(--yellow); line-height: 1; }
-  .logo-top .wrench-o {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 0.78em; height: 0.85em; position: relative; margin: 0 0.01em;
-  }
-  .logo-top .wrench-o svg { width: 100%; height: 100%; fill: var(--yellow); filter: drop-shadow(0 0 4px rgba(245,216,0,0.5)); }
   .logo-srv { color: var(--blue-glow); font-weight: 900; }
   .nav-links { display: flex; gap: 24px; list-style: none; }
   .nav-links a {
@@ -300,6 +259,7 @@
     text-decoration: none; min-height: 44px;
   }
   .nav-phone:hover { color: var(--yellow-bright); }
+
   .hamburger {
     display: none; flex-direction: column; gap: 5px;
     cursor: pointer; padding: 8px; background: none; border: none;
@@ -362,7 +322,8 @@
   .sticky-cta-tg { background: linear-gradient(135deg,#229ed9,#1a85b8); color: #fff; }
   .sticky-cta-tg:active { transform: scale(0.97); }
   .sticky-cta-tg svg { width: 18px; height: 18px; flex-shrink: 0; }
-
+  .sticky-cta-ig { background: linear-gradient(135deg,#f15245,#d92e7f); color: #fff; }
+  .sticky-cta-ig:active { transform: scale(0.97); }
 
   .scroll-top {
     position: fixed; bottom: 90px; right: 16px; z-index: 149;
@@ -376,7 +337,6 @@
   }
   .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
   .scroll-top:hover { background: var(--blue); border-color: var(--blue-glow); color: var(--white); }
-
 
   .hero {
     min-height: 90vh; display: flex; align-items: center;
@@ -451,7 +411,6 @@
   .stat .num { font-size: 1.6rem; font-weight: 900; color: var(--yellow); font-family: 'Share Tech Mono', monospace; line-height: 1; }
   .stat .lbl { font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
 
-
   .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
   .phone-frame {
     width: 200px; height: 390px;
@@ -489,7 +448,6 @@
   .badge-2 { bottom: 55px; right: -65px; color: var(--blue-glow); animation: float 3.5s ease-in-out infinite 1s; }
   .badge-3 { top: 50%; left: -75px; transform: translateY(-50%); color: var(--white); animation: float 4s ease-in-out infinite 0.2s; }
 
-
   section { padding: 80px 0; position: relative; z-index: 1; }
   .section-label {
     font-family: 'Share Tech Mono', monospace; font-size: 0.72rem;
@@ -499,7 +457,6 @@
   .section-label::before, .section-label::after { content: ''; flex: none; width: 28px; height: 1px; background: var(--blue-bright); }
   .section-title { font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 900; margin-bottom: 40px; line-height: 1.15; }
   .section-title span { color: var(--yellow); }
-
 
   .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
   .service-card {
@@ -518,7 +475,6 @@
   .svc-name { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; color: var(--white); }
   .svc-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
   .svc-price { margin-top: 14px; font-family: 'Share Tech Mono', monospace; font-size: 0.78rem; color: var(--yellow); letter-spacing: 0.05em; }
-
 
   #price { background: rgba(10,14,24,0.7); border-top: 1px solid rgba(37,96,232,0.12); border-bottom: 1px solid rgba(37,96,232,0.12); }
   .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
@@ -544,7 +500,6 @@
   }
   .price-note { text-align: center; margin-top: 20px; font-size: 0.8rem; color: var(--text-dim); font-family: 'Share Tech Mono', monospace; letter-spacing: 0.08em; }
   .price-note span { color: var(--blue-glow); }
-
 
   .price-free-banner {
     display: flex; align-items: center; gap: 18px;
@@ -572,7 +527,6 @@
     .price-free-badge { margin-left: 0; }
   }
 
-
   #brands { background: rgba(26,79,196,0.04); border-top: 1px solid rgba(37,96,232,0.1); border-bottom: 1px solid rgba(37,96,232,0.1); }
   .brands-row { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
   .brand-chip {
@@ -583,7 +537,6 @@
   }
   .brand-chip:hover { border-color: var(--yellow); color: var(--white); background: rgba(245,216,0,0.06); }
   .brand-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-glow); flex-shrink: 0; }
-
 
   #reviews {
     padding: 70px 0;
@@ -605,7 +558,6 @@
     border: 1px solid rgba(37,96,232,0.15);
     padding: 4px;
   }
-
 
   .info-strip {
     background: linear-gradient(90deg,var(--blue) 0%,#0f3080 100%);
@@ -633,7 +585,6 @@
   .btn-maps:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); }
   .btn-maps svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(190px,1fr)); gap: 20px; }
   .why-card {
     text-align: center; padding: 32px 20px;
@@ -643,7 +594,6 @@
   .why-card:hover { border-color: rgba(245,216,0,0.4); background: rgba(245,216,0,0.05); transform: translateY(-3px); }
   .why-num { font-size: 2.6rem; line-height: 1; margin-bottom: 14px; }
   .why-label { font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.5; }
-
 
   #faq { background: rgba(10,14,24,0.6); border-top: 1px solid rgba(37,96,232,0.12); }
   .faq-list { display: flex; flex-direction: column; gap: 10px; }
@@ -676,7 +626,6 @@
   .faq-item.open .faq-a { max-height: 300px; padding: 0 22px 18px; }
   .faq-a p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.7; }
 
-
   #map-section { padding: 0; }
   .map-wrap {
     position: relative; height: 340px; overflow: hidden;
@@ -693,7 +642,6 @@
   .map-overlay .mo-title { font-weight: 800; font-size: 0.95rem; margin-bottom: 4px; }
   .map-overlay .mo-addr { font-size: 0.78rem; color: var(--text-dim); }
   .map-overlay .mo-hours { font-size: 0.75rem; color: var(--blue-glow); margin-top: 6px; font-family: 'Share Tech Mono', monospace; }
-
 
   #order { background: rgba(26,79,196,0.04); border-top: 1px solid rgba(37,96,232,0.12); }
   .order-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
@@ -740,8 +688,8 @@
   }
   .btn-submit:hover { background: var(--yellow-bright); transform: translateY(-2px); box-shadow: 0 0 35px rgba(245,216,0,0.4); }
   .btn-submit:active { transform: scale(0.98); }
+  .btn-submit:disabled { background: rgba(245,216,0,0.5); cursor: not-allowed; }
   .form-note { font-size: 0.72rem; color: var(--text-dim); text-align: center; margin-top: 10px; }
-
 
   .form-success {
     display: none; text-align: center; padding: 24px 16px;
@@ -749,7 +697,6 @@
   .form-success .success-icon { font-size: 3rem; margin-bottom: 12px; }
   .form-success .success-title { font-size: 1.2rem; font-weight: 800; color: #4ade80; margin-bottom: 8px; }
   .form-success .success-sub { font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; }
-
 
   .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
   .contact-row {
@@ -782,6 +729,11 @@
     border: 2px solid rgba(34,158,217,0.4); box-shadow: 0 0 30px rgba(34,158,217,0.2);
   }
   .big-cta-tg:hover { border-color: #229ed9; box-shadow: 0 0 50px rgba(34,158,217,0.4); }
+  .big-cta-ig {
+    background: linear-gradient(135deg,#3d1429,#5a1a4a);
+    border: 2px solid rgba(228,64,95,0.4); box-shadow: 0 0 30px rgba(228,64,95,0.2);
+  }
+  .big-cta-ig:hover { border-color: #e4405f; box-shadow: 0 0 50px rgba(228,64,95,0.4); }
   .big-cta-maps {
     background: linear-gradient(135deg,#0a2018,#0f3322);
     border: 2px solid rgba(52,211,153,0.4); box-shadow: 0 0 30px rgba(52,211,153,0.15);
@@ -794,12 +746,15 @@
   .big-cta-icon-phone { background: rgba(245,216,0,0.15); }
   .big-cta-icon-tg { background: rgba(34,158,217,0.2); }
   .big-cta-icon-tg svg { width: 28px; height: 28px; fill: #fff; }
+  .big-cta-icon-ig { background: rgba(228,64,95,0.2); }
+  .big-cta-icon-ig svg { width: 28px; height: 28px; fill: #e4405f; }
   .big-cta-icon-maps { background: rgba(52,211,153,0.2); }
   .big-cta-icon-maps svg { width: 28px; height: 28px; fill: #34d399; }
   .big-cta-text .sub { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.6; color: #fff; margin-bottom: 4px; }
   .big-cta-text .main { font-size: 1.2rem; font-weight: 900; color: #fff; letter-spacing: 0.02em; font-family: 'Share Tech Mono', monospace; }
   .big-cta-text .main.yellow { color: var(--yellow); text-shadow: 0 0 15px rgba(245,216,0,0.4); }
   .big-cta-text .main.tg-color { color: #7dd3f0; }
+  .big-cta-text .main.ig-color { color: #f48fb1; }
   .big-cta-text .main.maps-color { color: #6ee7b7; }
 
   .slogan-block {
@@ -811,17 +766,14 @@
   .slogan-sep { color: var(--blue-glow); }
   .slogan-sub { font-size: 0.78rem; color: var(--text-dim); margin-top: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
 
- 
   footer { background: rgba(10,12,16,0.95); border-top: 2px solid rgba(37,96,232,0.3); padding: 24px 0; text-align: center; }
   .footer-logo { font-size: 1.25rem; font-weight: 900; margin-bottom: 8px; }
   .footer-logo .top { color: var(--yellow); }
   .footer-logo .srv { color: var(--blue-glow); }
   .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
 
-
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
-
 
   @media(max-width: 900px) {
     .nav-links { display: none; }
@@ -841,7 +793,6 @@
     .info-grid { grid-template-columns: 1fr; gap: 16px; }
     .contact-wrap { grid-template-columns: 1fr; gap: 24px; }
     .order-wrap { grid-template-columns: 1fr; gap: 28px; }
-    .review-stream { height: 340px; }
     section { padding: 60px 0; }
     .services-grid { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
     .price-grid { grid-template-columns: 1fr; }
@@ -858,13 +809,13 @@
     .brand-chip { font-size: 0.85rem; padding: 9px 14px; }
     .nav-logo { font-size: 1.15rem; }
     .cta-popup { max-width: calc(100vw - 40px); }
+    .sticky-cta-btn { font-size: 0.75rem; padding: 10px 8px; }
   }
 
   @media(prefers-reduced-motion: reduce) {
     .phone-frame, .badge-1, .badge-2, .badge-3 { animation: none; }
     .orbit-ring { animation: none; }
     .nav-logo .gear-icon { animation: none; }
-    .review-feed { animation: none; }
   }
 </style>
 </head>
@@ -873,45 +824,21 @@
 <div class="circuit-bg">
   <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <g stroke="#3d7fff" stroke-width="1.5" fill="none">
-      <path d="M0 150 H300 V200 H600 V150 H900"/>
-      <path d="M200 400 H500 V350 H800 V400 H1100 V450 H1440"/>
-      <path d="M0 600 H250 V650 H550 V600 H850"/>
-      <path d="M700 700 H950 V750 H1200 V700 H1440"/>
-      <path d="M300 0 V150 M300 200 V400"/>
-      <path d="M600 150 V50 M600 150 V300"/>
-      <path d="M900 0 V150"/>
-      <path d="M500 350 V200 M500 400 V600"/>
-      <path d="M800 400 V250"/>
-      <path d="M250 650 V900 M250 600 V350"/>
-      <path d="M550 650 V900"/>
-      <path d="M950 700 V550 M950 750 V900"/>
-      <path d="M1200 700 V500"/>
-      <circle cx="300" cy="150" r="5" fill="#3d7fff"/>
-      <circle cx="300" cy="200" r="5" fill="#3d7fff"/>
-      <circle cx="600" cy="150" r="5" fill="#3d7fff"/>
-      <circle cx="500" cy="350" r="5" fill="#3d7fff"/>
-      <circle cx="800" cy="400" r="5" fill="#3d7fff"/>
-      <circle cx="250" cy="600" r="5" fill="#3d7fff"/>
-      <circle cx="550" cy="650" r="5" fill="#3d7fff"/>
-      <circle cx="950" cy="700" r="5" fill="#f5d800"/>
-      <circle cx="1200" cy="700" r="5" fill="#f5d800"/>
-      <circle cx="250" cy="350" r="4" fill="none" stroke="#f5d800"/>
-      <circle cx="1100" cy="450" r="4" fill="none" stroke="#f5d800"/>
-      <rect x="380" y="220" width="80" height="50" rx="4"/>
-      <line x1="380" y1="235" x2="360" y2="235"/>
-      <line x1="380" y1="250" x2="360" y2="250"/>
-      <line x1="460" y1="235" x2="480" y2="235"/>
-      <line x1="460" y1="250" x2="480" y2="250"/>
-      <rect x="750" y="480" width="100" height="60" rx="4"/>
-      <line x1="750" y1="498" x2="730" y2="498"/>
-      <line x1="750" y1="515" x2="730" y2="515"/>
-      <line x1="850" y1="498" x2="870" y2="498"/>
-      <line x1="850" y1="515" x2="870" y2="515"/>
+      <path d="M0 150 H300 V200 H600 V150 H900"/><path d="M200 400 H500 V350 H800 V400 H1100 V450 H1440"/><path d="M0 600 H250 V650 H550 V600 H850"/><path d="M700 700 H950 V750 H1200 V700 H1440"/>
+      <path d="M300 0 V150 M300 200 V400"/><path d="M600 150 V50 M600 150 V300"/><path d="M900 0 V150"/><path d="M500 350 V200 M500 400 V600"/><path d="M800 400 V250"/>
+      <path d="M250 650 V900 M250 600 V350"/><path d="M550 650 V900"/><path d="M950 700 V550 M950 750 V900"/><path d="M1200 700 V500"/>
+      <circle cx="300" cy="150" r="5" fill="#3d7fff"/><circle cx="300" cy="200" r="5" fill="#3d7fff"/><circle cx="600" cy="150" r="5" fill="#3d7fff"/>
+      <circle cx="500" cy="350" r="5" fill="#3d7fff"/><circle cx="800" cy="400" r="5" fill="#3d7fff"/><circle cx="250" cy="600" r="5" fill="#3d7fff"/>
+      <circle cx="550" cy="650" r="5" fill="#3d7fff"/><circle cx="950" cy="700" r="5" fill="#f5d800"/><circle cx="1200" cy="700" r="5" fill="#f5d800"/>
+      <circle cx="250" cy="350" r="4" fill="none" stroke="#f5d800"/><circle cx="1100" cy="450" r="4" fill="none" stroke="#f5d800"/>
+      <rect x="380" y="220" width="80" height="50" rx="4"/><line x1="380" y1="235" x2="360" y2="235"/><line x1="380" y1="250" x2="360" y2="250"/>
+      <line x1="460" y1="235" x2="480" y2="235"/><line x1="460" y1="250" x2="480" y2="250"/>
+      <rect x="750" y="480" width="100" height="60" rx="4"/><line x1="750" y1="498" x2="730" y2="498"/><line x1="750" y1="515" x2="730" y2="515"/>
+      <line x1="850" y1="498" x2="870" y2="498"/><line x1="850" y1="515" x2="870" y2="515"/>
     </g>
   </svg>
 </div>
 
-  
 <div class="moskali-overlay" id="moskaliOverlay" onclick="closeMoskali()">
   <div class="flag-top"></div>
   <div class="flag-bottom"></div>
@@ -929,48 +856,32 @@
   </div>
 </div>
 
-
 <div class="repair-ticker">
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
-
 
 <div class="lang-switcher">
   <button class="lang-btn active" onclick="setLang('uk')">🇺🇦 УКР</button>
   <button class="lang-btn" onclick="setLang('ru')">РУС</button>
 </div>
 
-
 <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Нагору">↑</button>
 
-
 <div class="sticky-cta" id="stickyCta">
-  <a href="tel:0660052325" class="sticky-cta-btn sticky-cta-phone">📞 Зателефонувати</a>
+  <a href="tel:0660052325" class="sticky-cta-btn sticky-cta-phone">📞 Call</a>
   <button class="sticky-cta-btn sticky-cta-tg" onclick="openTelegram()">
     <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.26l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.836.326z"/></svg>
     TG
   </button>
+  <a href="https://www.instagram.com/top_service_dndz?igsh=aWJwcHBuMmZvMjE0" target="_blank" class="sticky-cta-btn sticky-cta-ig">📷 IG</a>
 </div>
-
 
 <nav>
   <div class="inner">
     <a href="#" class="nav-logo">
       <span class="gear-icon">⚙</span>
-      <span class="logo-top">
-        <span class="letter-t">Т</span><span class="wrench-o">
-          <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 5 C25 5 5 25 5 50 C5 75 25 95 50 95 C75 95 95 75 95 50 C95 25 75 5 50 5 Z M50 18 C68 18 82 32 82 50 C82 68 68 82 50 82 C32 82 18 68 18 50 C18 32 32 18 50 18 Z" fill="var(--yellow)" opacity="0.15"/>
-            <g transform="translate(50,50) rotate(-30)">
-              <rect x="-6" y="5" width="12" height="42" rx="3" fill="var(--yellow)"/>
-              <circle cx="0" cy="0" r="18" fill="var(--yellow)"/>
-              <circle cx="0" cy="0" r="10" fill="var(--gray-dark)"/>
-              <rect x="-20" y="-8" width="14" height="16" rx="2" fill="var(--gray-dark)"/>
-            </g>
-          </svg>
-        </span><span class="letter-p">П</span>
-      </span>
-      <span class="logo-srv">СЕРВІС</span>
+      <span style="color: var(--yellow); font-weight: 900;">ТОП</span>
+      <span style="color: var(--blue-glow); font-weight: 900;">СЕРВІС</span>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Послуги</a></li>
@@ -987,7 +898,6 @@
   </div>
 </nav>
 
-
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMenu()">Послуги</a>
   <a href="#price" onclick="closeMenu()">Прайс</a>
@@ -997,7 +907,6 @@
   <a href="#contact" onclick="closeMenu()">Контакти</a>
   <a href="tel:0660052325" class="m-phone" onclick="closeMenu()">066 005 2325</a>
 </div>
-
 
 <section class="hero">
   <div class="container">
@@ -1046,7 +955,6 @@
   </div>
 </section>
 
-
 <div class="info-strip">
   <div class="container">
     <div class="info-grid">
@@ -1064,7 +972,7 @@
           <div class="info-value">вул. Медична 1/11, Камʼянське</div>
           <a href="https://www.google.com/maps/dir/?api=1&destination=вул.+Медична+1%2F11%2C+Кам%27янське" target="_blank" class="btn-maps">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            Прокласти маршрут →
+            Маршрут →
           </a>
         </div>
       </div>
@@ -1078,7 +986,6 @@
     </div>
   </div>
 </div>
-
 
 <section id="services">
   <div class="container">
@@ -1106,7 +1013,7 @@
       <div class="service-card reveal">
         <span class="svc-icon">💻</span>
         <div class="svc-name">Ремонт ноутбуків</div>
-        <div class="svc-desc">Заміна екрану, клавіатури, термопасти, SSD, оперативної памʼяті та інше.</div>
+        <div class="svc-desc">Заміна екрану, клавіатури, термопасти, SSD та оперативної памʼяті.</div>
         <div class="svc-price">▶ Будь-який бренд</div>
       </div>
       <div class="service-card reveal">
@@ -1125,7 +1032,6 @@
   </div>
 </section>
 
-
 <section id="price">
   <div class="container">
     <div class="section-label">вартість ремонту</div>
@@ -1142,7 +1048,7 @@
 
     <div class="price-grid">
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🛍️</div><div><div class="price-name">Аксесуари</div><div class="price-brand">Чохли, кабелі, зарядки та ін.</div></div></div>
+        <div class="price-service"><div class="price-icon">🛍️</div><div><div class="price-name">Аксесуари</div><div class="price-brand">Чохли, кабелі, зарядки</div></div></div>
         <div class="price-amount">150+ грн</div>
       </div>
       <div class="price-card reveal">
@@ -1150,176 +1056,27 @@
         <div class="price-amount">250+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🧹</div><div><div class="price-name">Чистка комплексна</div><div class="price-brand">Повне очищення пристрою</div></div></div>
+        <div class="price-service"><div class="price-icon">🧹</div><div><div class="price-name">Чистка комплексна</div><div class="price-brand">Повне очищення</div></div></div>
         <div class="price-amount">200 грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🔌</div><div><div class="price-name">Роз'єм зарядки</div><div class="price-brand">USB-C / Lightning / micro-USB</div></div></div>
+        <div class="price-service"><div class="price-icon">🔌</div><div><div class="price-name">Роз'єм зарядки</div><div class="price-brand">USB-C / Lightning / micro</div></div></div>
         <div class="price-amount">500+ грн</div>
-      </div>
-      <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🎙️</div><div><div class="price-name">Мікрофон / динамік</div><div class="price-brand">Будь-яка модель смартфона</div></div></div>
-        <div class="price-amount">450+ грн</div>
       </div>
       <div class="price-card reveal">
         <div class="price-service"><div class="price-icon">📱</div><div><div class="price-name">Заміна скла дисплею</div><div class="price-brand">Зі збереженням матриці</div></div></div>
         <div class="price-amount">800+ грн</div>
       </div>
       <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🖥️</div><div><div class="price-name">Зміна дисплею</div><div class="price-brand">iPhone / Samsung / Xiaomi</div></div></div>
+        <div class="price-service"><div class="price-icon">🖥️</div><div><div class="price-name">Заміна дисплею</div><div class="price-brand">iPhone / Samsung / Xiaomi</div></div></div>
         <div class="price-amount">700+ грн</div>
-      </div>
-      <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">📟</div><div><div class="price-name">Ремонт планшетів</div><div class="price-brand">iPad / Samsung Tab та інші</div></div></div>
-        <div class="price-amount">700+ грн</div>
-      </div>
-      <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">💻</div><div><div class="price-name">Чистка ноутбука / PlayStation</div><div class="price-brand">Від пилу, термопаста</div></div></div>
-        <div class="price-amount">800+ грн</div>
-      </div>
-      <div class="price-card reveal">
-        <div class="price-service"><div class="price-icon">🎧</div><div><div class="price-name">Чистка навушників</div><div class="price-brand">AirPods / TWS / дротові</div></div></div>
-        <div class="price-amount">300 грн</div>
       </div>
     </div>
     <div class="price-note">
-      <span>※</span> Точна ціна визначається після діагностики. Ціни орієнтовні. Телефонуйте — уточнимо вартість безкоштовно.
+      <span>※</span> Точна ціна після діагностики. Ціни орієнтовні. Телефонуйте: 066 005 2325
     </div>
   </div>
 </section>
-
-
-<section id="brands" style="padding: 48px 0;">
-  <div class="container">
-    <div class="section-label" style="justify-content:center; margin-bottom: 26px;">Бренди які ми ремонтуємо</div>
-    <div class="brands-row">
-      <div class="brand-chip"><span class="dot"></span>Apple iPhone</div>
-      <div class="brand-chip"><span class="dot"></span>Samsung</div>
-      <div class="brand-chip"><span class="dot"></span>Xiaomi / Mi</div>
-      <div class="brand-chip"><span class="dot"></span>Realme</div>
-      <div class="brand-chip"><span class="dot"></span>Huawei</div>
-      <div class="brand-chip"><span class="dot"></span>Oppo</div>
-      <div class="brand-chip"><span class="dot"></span>Та інші</div>
-    </div>
-  </div>
-</section>
-
-
-<section id="faq">
-  <div class="container">
-    <div class="section-label">часті питання</div>
-    <h2 class="section-title reveal">Питання та <span>відповіді</span></h2>
-    <div class="faq-list" id="faqList">
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Скільки часу займає ремонт?
-          <i class="faq-icon">+</i>
-        </div>
-        <div class="faq-a">
-          <p>Більшість ремонтів ми виконуємо в день звернення. Заміна акумулятора та захисного скла займає від 30 хвилин, заміна дисплея — від 1–2 годин. Складніші випадки (після води, пошкодження плати) можуть займати до 1–2 робочих днів — завжди попередимо заздалегідь.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Ви використовуєте оригінальні запчастини?
-          <i class="faq-icon">+</i>
-        </div>
-        <div class="faq-a">
-          <p>Так, ми використовуємо оригінальні або сертифіковані запчастини від перевірених постачальників. Перед початком ремонту ми завжди узгоджуємо з клієнтом тип запчастини та її вартість — ніяких сюрпризів.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Яка гарантія на ремонт?
-          <i class="faq-icon">+</i>
-        </div>
-        <div class="faq-a">
-          <p>Ми надаємо гарантію 30 днів на всі виконані роботи та встановлені запчастини. Якщо протягом цього терміну виникне проблема через нашу вину — відремонтуємо безкоштовно. Гарантія не поширюється на механічні пошкодження після ремонту.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Скільки коштує діагностика?
-          <i class="faq-icon">+</i>
-        </div>
-        <div class="faq-a">
-          <p>Діагностика абсолютно безкоштовна — за будь-якого ремонту. Ви приносите пристрій, ми безплатно визначаємо причину несправності та називаємо точну вартість. Ремонт починаємо лише після вашої згоди.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Чи зберігаються мої дані при ремонті?
-          <i class="faq-icon">+</i>
-        </div>
-        <div class="faq-a">
-          <p>Ми дбайливо ставимось до ваших персональних даних. При більшості ремонтів (заміна скла, роз'єму, акумулятора) дані залишаються недоторканими. Якщо ремонт може вплинути на дані — ми попередимо вас заздалегідь і рекомендуємо зробити резервну копію.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Чи ремонтуєте ви після потрапляння води?
-          <i class="faq-icon">+</i>
-        </div>
-        <div class="faq-a">
-          <p>Так! Ми виконуємо ультразвукове чищення та діагностику після потрапляння рідини. Чим швидше ви принесете пристрій — тим більше шансів на успішний ремонт. Не заряджайте та не вмикайте телефон після контакту з водою — це може спричинити коротке замикання.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Чи можна записатись заздалегідь?
-          <i class="faq-icon">+</i>
-        </div>
-        <div class="faq-a">
-          <p>Так, можна записатись через Telegram, Viber або за телефоном. Ви також можете заповнити онлайн-форму нижче — ми зателефонуємо вам та підтвердимо зручний час. Працюємо без вихідних у будні та суботу.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<section id="reviews">
-  <div class="container">
-    <div class="reviews-header reveal">
-      <div>
-        <div class="section-label" style="margin-bottom: 6px;">відгуки клієнтів</div>
-        <h2 class="section-title" style="margin-bottom: 0;">Що кажуть <span>клієнти</span></h2>
-      </div>
-      <div class="google-badge">
-        <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        Google Reviews
-      </div>
-    </div>
-    <div class="elfsight-wrap reveal">
-      <script src="https://static.elfsight.com/platform/platform.js" async></script>
-      <div class="elfsight-app-5ffb8a6e-e10a-4f7e-b4f6-d0af54a816f9" data-elfsight-app-lazy></div>
-    </div>
-  </div>
-</section>
-
-
-<section id="why">
-  <div class="container">
-    <div class="section-label">чому обирають нас</div>
-    <h2 class="section-title reveal">Наші <span>переваги</span></h2>
-    <div class="why-grid">
-      <div class="why-card reveal"><div class="why-num">⚡</div><div class="why-label">Швидкий ремонт<br>від 30 хвилин</div></div>
-      <div class="why-card reveal"><div class="why-num">🔩</div><div class="why-label">Лише оригінальні<br>запчастини</div></div>
-      <div class="why-card reveal"><div class="why-num">🛡</div><div class="why-label">Гарантія на всі<br>види робіт</div></div>
-      <div class="why-card reveal"><div class="why-num">💰</div><div class="why-label">Чесні ціни без<br>прихованих платежів</div></div>
-      <div class="why-card reveal"><div class="why-num">👨‍🔧</div><div class="why-label">Досвідчені<br>майстри</div></div>
-    </div>
-  </div>
-</section>
-
 
 <section id="order">
   <div class="container">
@@ -1329,29 +1086,28 @@
       
       <div class="order-info reveal">
         <p style="color:var(--text-dim);line-height:1.7;margin-bottom:10px;">
-          Не хочете телефонувати? Заповніть форму — ми зателефонуємо вам самі та узгодимо зручний час.
+          Не хочете телефонувати? Заповніть форму — ми зателефонуємо вам протягом 30 хвилин!
         </p>
         <div class="order-perks">
           <div class="order-perk">
             <div class="order-perk-icon">⏱</div>
-            <div class="order-perk-text"><strong>Відповідаємо протягом 30 хвилин</strong> в робочий час</div>
+            <div class="order-perk-text"><strong>Відповідаємо за 30 хвилин</strong> в робочий час</div>
           </div>
           <div class="order-perk">
             <div class="order-perk-icon">💬</div>
-            <div class="order-perk-text"><strong>Попередня оцінка вартості</strong> ще до візиту в сервіс</div>
+            <div class="order-perk-text"><strong>Попередня оцінка</strong> вартості ремонту</div>
           </div>
           <div class="order-perk">
             <div class="order-perk-icon">🔒</div>
-            <div class="order-perk-text"><strong>Ваші дані в безпеці</strong> — не передаємо третім особам</div>
+            <div class="order-perk-text"><strong>Ваші дані в безпеці</strong> — не передаємо третім</div>
           </div>
           <div class="order-perk">
             <div class="order-perk-icon">🚫</div>
-            <div class="order-perk-text"><strong>Ніяких зобов'язань</strong> — заявка безкоштовна та необов'язкова</div>
+            <div class="order-perk-text"><strong>Ніяких зобов'язань</strong> — заявка безкоштовна</div>
           </div>
         </div>
       </div>
 
-      
       <div class="order-form-box reveal">
         <div class="form-title">Заявка на <span>ремонт</span></div>
         <div id="orderFormInner">
@@ -1397,45 +1153,31 @@
             <label class="form-label" for="fcomment">Коментар (необов'язково)</label>
             <textarea class="form-control" id="fcomment" placeholder="Детальніше опишіть проблему..."></textarea>
           </div>
-          <button class="btn-submit" onclick="submitForm()">
+          <button class="btn-submit" id="submitBtn" onclick="submitForm()">
             📨 Надіслати заявку
           </button>
-          <div class="form-note">Натискаючи кнопку, ви погоджуєтесь на зворотній дзвінок від нашого майстра</div>
+          <div class="form-note">Натискаючи кнопку, ви погоджуєтесь на контакт з нашим майстром</div>
         </div>
 
-        
+        <div class="form-loading" id="formLoading">
+          <div class="spinner"></div>
+          <div class="form-loading-text">Надіслання заявки...</div>
+        </div>
+
         <div class="form-success" id="formSuccess">
           <div class="success-icon">✅</div>
           <div class="success-title">Заявку отримано!</div>
           <div class="success-sub">
             Дякуємо, <strong id="successName"></strong>!<br>
-            Ми зателефонуємо вам на номер <strong id="successPhone"></strong><br>
+            Ми зателефонуємо вам на <strong id="successPhone"></strong><br>
             протягом 30 хвилин у робочий час.<br><br>
-            Або зателефонуйте нам самі: <a href="tel:0660052325" style="color:var(--yellow)">066 005 2325</a>
+            Контакт: <a href="tel:0660052325" style="color:var(--yellow)">066 005 2325</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-<div id="map-section">
-  <div class="map-wrap">
-    <iframe
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      src="https://maps.google.com/maps?q=%D0%B2%D1%83%D0%BB.+%D0%9C%D0%B5%D0%B4%D0%B8%D1%87%D0%BD%D0%B0+1%2F11%2C+%D0%9A%D0%B0%D0%BC%27%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B5&output=embed&z=16"
-      title="Місцезнаходження ТОП СЕРВІС на карті">
-    </iframe>
-    <div class="map-overlay">
-      <div class="mo-title">📍 ТОП СЕРВІС</div>
-      <div class="mo-addr">вул. Медична 1/11, Камʼянське</div>
-      <div class="mo-hours">🕐 Пн–Пт: 10:00–18:00 | Сб: 11:00–14:00</div>
-    </div>
-  </div>
-</div>
-
 
 <section id="contact">
   <div class="container">
@@ -1461,21 +1203,16 @@
           <div class="contact-row-icon">🕐</div>
           <div class="contact-row-text">
             <div class="lbl">Графік роботи</div>
-            <div class="val">Понеділок – П'ятниця: 10:00 – 18:00<br>Субота: 11:00 – 14:00<br><span style="color:var(--text-dim);font-size:0.82rem">Неділя: вихідний</span></div>
+            <div class="val">Пн–Пт: 10:00 – 18:00<br>Сб: 11:00 – 14:00<br><span style="color:var(--text-dim);font-size:0.82rem">Неділя: вихідний</span></div>
           </div>
-        </div>
-        <div class="slogan-block" style="margin-top:16px">
-          <div class="slogan-text">Швидкість<span class="slogan-sep"> / </span>Якість<span class="slogan-sep"> / </span>Гарантія</div>
-          <div class="slogan-sub">Наш девіз — ваша впевненість</div>
         </div>
       </div>
 
       <div class="contact-cta-block reveal">
-        
         <a href="tel:0660052325" class="big-cta-btn big-cta-phone">
           <div class="big-cta-icon big-cta-icon-phone">📞</div>
           <div class="big-cta-text">
-            <div class="sub">Зателефонувати зараз</div>
+            <div class="sub">Зателефонувати</div>
             <div class="main yellow">066 005 2325</div>
           </div>
         </a>
@@ -1485,18 +1222,18 @@
             <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.26l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.836.326z"/></svg>
           </div>
           <div class="big-cta-text">
-            <div class="sub">Написати повідомлення</div>
-            <div class="main tg-color">Написати в Telegram →</div>
+            <div class="sub">Написати в</div>
+            <div class="main tg-color">Telegram →</div>
           </div>
         </button>
-        
-        <a href="https://www.google.com/maps/dir/?api=1&destination=вул.+Медична+1%2F11%2C+Кам%27янське" target="_blank" class="big-cta-btn big-cta-maps">
-          <div class="big-cta-icon big-cta-icon-maps">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+
+        <a href="https://www.instagram.com/top_service_dndz?igsh=aWJwcHBuMmZvMjE0" target="_blank" class="big-cta-btn big-cta-ig">
+          <div class="big-cta-icon big-cta-icon-ig">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
           </div>
           <div class="big-cta-text">
-            <div class="sub">Знайти нас на карті</div>
-            <div class="main maps-color">Відкрити Google Maps →</div>
+            <div class="sub">Подписуйтесь</div>
+            <div class="main ig-color">Instagram →</div>
           </div>
         </a>
       </div>
@@ -1504,16 +1241,14 @@
   </div>
 </section>
 
-
 <footer>
   <div class="container">
     <div class="footer-logo"><span class="top">ТОП</span> <span class="srv">СЕРВІС</span></div>
-    <div class="footer-copy">© 2025 ТОП СЕРВІС · Ремонт смартфонів та ноутбуків · вул. Медична 1/11, Камʼянське</div>
+    <div class="footer-copy">© 2025 · Ремонт смартфонів та ноутбуків · вул. Медична 1/11, Камʼянське</div>
   </div>
 </footer>
 
 <script>
-
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
@@ -1525,7 +1260,6 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 reveals.forEach(r => observer.observe(r));
 
-
 document.querySelectorAll('.hero-left > *').forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
@@ -1533,11 +1267,10 @@ document.querySelectorAll('.hero-left > *').forEach((el, i) => {
   setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, 200 + i * 120);
 });
 
-
 setTimeout(() => {
   const popup = document.getElementById('ctaPopup');
   if (popup) popup.classList.add('show');
-}, 60000); 
+}, 60000);
 
 function closeCtaPopup() {
   const popup = document.getElementById('ctaPopup');
@@ -1547,7 +1280,6 @@ function closeCtaPopup() {
   }
 }
 
-
 (function() {
   const navPhone = document.getElementById('navPhone');
   if (window.innerWidth > 900) navPhone.style.display = 'flex';
@@ -1555,7 +1287,6 @@ function closeCtaPopup() {
     navPhone.style.display = window.innerWidth > 900 ? 'flex' : 'none';
   });
 })();
-
 
 function toggleMenu() {
   const m = document.getElementById('mobileMenu');
@@ -1571,6 +1302,7 @@ function toggleMenu() {
   }
   h.classList.toggle('open');
 }
+
 function closeMenu() {
   const m = document.getElementById('mobileMenu');
   const h = document.getElementById('hamburger');
@@ -1580,15 +1312,14 @@ function closeMenu() {
   h.classList.remove('open');
 }
 
-
 const scrollBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll', () => {
   scrollBtn.classList.toggle('visible', window.scrollY > 300);
 }, { passive: true });
+
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 
 function setLang(lang) {
   if (lang === 'ru') {
@@ -1598,16 +1329,16 @@ function setLang(lang) {
     document.querySelectorAll('.lang-btn')[0].classList.add('active');
   }
 }
+
 function closeMoskali() {
   document.getElementById('moskaliOverlay').classList.remove('show');
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.lang-btn')[0].classList.add('active');
 }
 
-
-function openTelegram() { window.open('https://t.me/TopService_Kamianske_bot', '_blank'); }
-function openMaps() { window.open('https://www.google.com/maps/dir/?api=1&destination=%D0%B2%D1%83%D0%BB.+%D0%9C%D0%B5%D0%B4%D0%B8%D1%87%D0%BD%D0%B0+1%2F11%2C+%D0%9A%D0%B0%D0%BC%27%D1%8F%D0%BD%D1%81%D1%8C%D0%BA%D0%B5', '_blank'); }
-
+function openTelegram() {
+  window.open('https://t.me/TopService_Kamianske_bot', '_blank');
+}
 
 function toggleFaq(el) {
   const item = el.parentElement;
@@ -1616,43 +1347,124 @@ function toggleFaq(el) {
   if (!isOpen) item.classList.add('open');
 }
 
-
-function submitForm() {
+///ФУНКЦИЯ ОТПРАВКИ В TELEGRAM
+async function submitForm() {
   const name = document.getElementById('fname').value.trim();
   const phone = document.getElementById('fphone').value.trim();
   const device = document.getElementById('fdevice').value;
   const problem = document.getElementById('fproblem').value;
+  const comment = document.getElementById('fcomment').value.trim();
 
-  if (!name) { alert('Будь ласка, введіть ваше ім\'я'); document.getElementById('fname').focus(); return; }
-  if (!phone || phone.replace(/\D/g,'').length < 9) { alert('Будь ласка, введіть коректний номер телефону'); document.getElementById('fphone').focus(); return; }
-  if (!device) { alert('Будь ласка, оберіть тип пристрою'); document.getElementById('fdevice').focus(); return; }
-  if (!problem) { alert('Будь ласка, оберіть тип несправності'); document.getElementById('fproblem').focus(); return; }
-
+  if (!name) { 
+    alert('Будь ласка, введіть ваше ім\'я'); 
+    document.getElementById('fname').focus(); 
+    return; 
+  }
   
-  document.getElementById('successName').textContent = name;
-  document.getElementById('successPhone').textContent = phone;
-  document.getElementById('orderFormInner').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  if (!phone || phone.replace(/\D/g,'').length < 9) { 
+    alert('Будь ласка, введіть коректний номер телефону'); 
+    document.getElementById('fphone').focus(); 
+    return; 
+  }
+  
+  if (!device) { 
+    alert('Будь ласка, оберіть тип пристрою'); 
+    document.getElementById('fdevice').focus(); 
+    return; 
+  }
+  
+  if (!problem) { 
+    alert('Будь ласка, оберіть тип несправності'); 
+    document.getElementById('fproblem').focus(); 
+    return; 
+  }
+
+  const formInner = document.getElementById('orderFormInner');
+  const formLoading = document.getElementById('formLoading');
+  const submitBtn = document.getElementById('submitBtn');
+  
+  formInner.style.display = 'none';
+  formLoading.classList.add('show');
+  submitBtn.disabled = true;
+
+  const message = `
+📱 <b>НОВА ЗАЯВКА НА РЕМОНТ</b>
+
+👤 <b>Ім'я:</b> ${escapeHtml(name)}
+📞 <b>Телефон:</b> <code>${escapeHtml(phone)}</code>
+🔧 <b>Пристрій:</b> ${escapeHtml(device)}
+⚠️ <b>Проблема:</b> ${escapeHtml(problem)}
+${comment ? `💬 <b>Коментар:</b> ${escapeHtml(comment)}` : ''}
+
+🕐 <b>Час:</b> ${new Date().toLocaleString('uk-UA')}
+  `.trim();
+
+  try {
+    const botToken = '8736514197:AAFEE90LeNeu-l6AyFz4jQHe-KALfJkQ0PU';
+    const chatId = '6221013974'; // ✓ Chat ID админа
+
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML'
+      })
+    });
+
+    const result = await response.json();
+
+    if (result.ok) {
+      formLoading.classList.remove('show');
+      document.getElementById('successName').textContent = name;
+      document.getElementById('successPhone').textContent = phone;
+      document.getElementById('formSuccess').style.display = 'block';
+      
+      setTimeout(() => {
+        document.getElementById('fname').value = '';
+        document.getElementById('fphone').value = '';
+        document.getElementById('fdevice').value = '';
+        document.getElementById('fproblem').value = '';
+        document.getElementById('fcomment').value = '';
+        formInner.style.display = 'block';
+        document.getElementById('formSuccess').style.display = 'none';
+        submitBtn.disabled = false;
+      }, 5000);
+    } else {
+      throw new Error('Telegram API error');
+    }
+
+  } catch (error) {
+    console.error('Ошибка:', error);
+    formLoading.classList.remove('show');
+    formInner.style.display = 'block';
+    submitBtn.disabled = false;
+    alert('❌ Помилка. Спробуйте ще раз або телефонуйте: 066 005 2325');
+  }
 }
 
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
 
 const tickerItems = [
-  { brand: 'iPhone 14 Pro', op: 'заміна дисплея', status: '🔧 В роботі' },
+  { brand: 'iPhone 14 Pro', op: 'заміна дисплея', status: '✅ Готово' },
   { brand: 'Samsung S23', op: 'заміна акумулятора', status: '✅ Готово' },
   { brand: 'Xiaomi 13T', op: 'ремонт роз\'єму USB-C', status: '🔧 В роботі' },
-  { brand: 'MacBook Air M2', op: 'заміна термопасти', status: '⏳ Очікує' },
-  { brand: 'iPhone 12', op: 'розбитий екран — заміна скла', status: '✅ Готово' },
-  { brand: 'Huawei P40 Pro', op: 'не тримає зарядку', status: '🔧 В роботі' },
-  { brand: 'Lenovo IdeaPad 5', op: 'заміна клавіатури', status: '✅ Готово' },
-  { brand: 'Realme 10 Pro', op: 'повна діагностика', status: '🔍 Діагностика' },
-  { brand: 'Samsung A54', op: 'заміна захисного скла', status: '🔧 В роботі' },
-  { brand: 'iPhone 15 Pro Max', op: 'заміна акумулятора', status: '⏳ Очікує' },
-  { brand: 'Oppo Reno 10', op: 'ремонт кнопки живлення', status: '✅ Готово' },
-  { brand: 'Xiaomi Redmi Note 12', op: 'заміна мікрофона', status: '🔧 В роботі' },
-  { brand: 'iPhone 11', op: 'заміна Face ID модуля', status: '🔧 В роботі' },
-  { brand: 'Samsung S22 Ultra', op: 'ремонт після води', status: '🔍 Діагностика' },
-  { brand: 'HP Laptop 15', op: 'заміна SSD 512GB', status: '✅ Готово' },
+  { brand: 'iPhone 12', op: 'розбитий екран', status: '✅ Готово' },
+  { brand: 'Realme 10 Pro', op: 'повна діагностика', status: '✅ Готово' },
 ];
+
 function buildTicker() {
   const track = document.getElementById('tickerTrack');
   const doubled = [...tickerItems, ...tickerItems];
@@ -1662,17 +1474,9 @@ function buildTicker() {
     el.innerHTML = `<span class="status-dot"></span><span class="brand">${item.brand}</span><span>—</span><span class="op">${item.op}</span><span>${item.status}</span><span class="ticker-sep">◆</span>`;
     track.appendChild(el);
   });
-  const totalWidth = track.scrollWidth / 2;
-  track.style.animationDuration = (totalWidth / 80) + 's';
 }
+
 buildTicker();
-
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
-  });
-}
 </script>
 </body>
 </html>
