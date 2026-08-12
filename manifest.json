@@ -1,0 +1,11 @@
+{
+  "name": "ТОП СЕРВІС — ремонт телефонів та ноутбуків",
+  "short_name": "ТОП СЕРВІС",
+  "description": "Сервісний центр ремонту смартфонів та ноутбуків у Кам'янському",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1d23",
+  "theme_color": "#1a4fc4",
+  "lang": "uk",
+  "icons": []
+}
