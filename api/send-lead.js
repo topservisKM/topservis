@@ -1,17 +1,3 @@
-// /api/send-lead — Vercel serverless function (Node.js runtime).
-//
-// This is the fix for the exposed Telegram bot token: the token now lives
-// ONLY here, read from an environment variable, and is never sent to the
-// browser. Set these in Vercel → Project → Settings → Environment Variables:
-//
-//   TELEGRAM_BOT_TOKEN   (the bot token — rotate it first, see note below)
-//   TELEGRAM_CHAT_ID     (currently 6221013974)
-//
-// IMPORTANT: the old token (8736514197:AAFEE9...) was live in client-side
-// code and is now considered compromised — anyone who viewed page source
-// could have copied it. Revoke/regenerate it with @BotFather (/revoke or
-// /token) BEFORE putting the new token into TELEGRAM_BOT_TOKEN.
-
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const rateLimitStore = new Map(); // ip -> [timestamps]  (resets on cold start; fine for basic abuse control)
