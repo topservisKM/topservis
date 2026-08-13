@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.topservice-kamianske.ua" }],
+      "has": [{ "type": "host", "value": "www.topservis.org" }],
       "destination": "https://topservis.org/:path*",
       "permanent": true
     }
