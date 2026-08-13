@@ -22,4 +22,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://topservice-kamianske.ua/sitemap.xml
+Sitemap: https://topservis.org/sitemap.xml
